@@ -91,9 +91,13 @@ CREATE TABLE `password_reset_tokens` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-DROP TABLE IF EXISTS `planets`;
+
+DROP TABLE IF EXISTS `planets`; /* Dit is down() method voor rollback */
+
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
+
+/* Dit is up() method voor doorvoeren verandering */
 CREATE TABLE `planets` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -145,4 +149,4 @@ CREATE TABLE `users` (
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (1,'0001_01_01_000000_create_users_table',1);
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (2,'0001_01_01_000001_create_cache_table',1);
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (3,'0001_01_01_000002_create_jobs_table',1);
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (4,'2025_11_11_192926_create_planets_table',2);
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (4,'2025_11_11_192926_create_planets_table',2); /* Migration van planets table */
