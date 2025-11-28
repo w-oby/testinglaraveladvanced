@@ -11,6 +11,7 @@ class PlanetSeeder extends Seeder
     public function run(): void
     {
 
+        // Hiervoor een seeder gebruikt, zodat ik de data niet handmatig hoeft te doen. 
         $planets = [
             [
                 'name' => 'Mars',
