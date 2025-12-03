@@ -8,6 +8,8 @@
 <body>
     <h1>Movies ordered from highest rating to lowest</h1>
     <ul>
+
+        {{-- Display all movies ordere by ratings from high to low --}}
         @foreach ($allMovies as $movie)
         <li>
             <p>{{ $movie->title}}</p>
@@ -17,6 +19,6 @@
 
     <br><br>
     <a href="/movies/index">Back to index</a>
-    
+
 </body>
 </html>
