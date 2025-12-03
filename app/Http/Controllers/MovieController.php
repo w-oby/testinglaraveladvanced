@@ -22,19 +22,19 @@ class MovieController extends Controller
 
     }
 
-    public function show(): View {
+    public function show(string $title): View {
 
-        $movie = DB::table('movies')->select('title')->get();
+        $singleMovie = DB::table('movies')->where('title', $title)->first();
 
-        return view('movies.show', ['movie' => $movie]);
+        return view('movies.show', ['movie' => $singleMovie]);
 
     }
 
     public function showByGenre(): View {
 
-        $genre = DB::table('movies')->orderby('genre')->get();
+        $singleMovieByGenre = DB::table('movies')->orderby('genre')->get();
 
-        return view('movies.genre', ['showByGenre' => $genre]);
+        return view('movies.genre', ['showByGenre' => $singleMovieByGenre]);
 
     }
 }
