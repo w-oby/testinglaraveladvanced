@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class MovieController extends Controller
 {
-    // index - all movies ordered by rating
+
     public function index(): View {
 
         return view('movies.index');
@@ -18,7 +18,7 @@ class MovieController extends Controller
 
         $allMovies = DB::table('movies')->orderBy('rating', 'desc')->get();
 
-        return view('movies.all_movies', ['allMovies' => $allMovies]);
+        return view('movies.rating', ['allMovies' => $allMovies]);
 
     }
 
@@ -34,7 +34,7 @@ class MovieController extends Controller
 
         $singleMovieByGenre = DB::table('movies')->orderby('genre')->get();
 
-        return view('movies.genre', ['showByGenre' => $singleMovieByGenre]);
+        return view('movies.genre', ['singleMovieByGenre' => $singleMovieByGenre]);
 
     }
 }

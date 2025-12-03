@@ -17,6 +17,8 @@ Route::get('/planets/{name}', [PlanetController::class, 'show']);
 // MOVIES
 Route::get('/movies', [MovieController::class, 'index']);
 
-Route::get('/movies/{title}', [MovieController::class, 'show']);
+Route::get('/movies/rating', [MovieController::class, 'allMoviesOrderedByRating']);
 
-Route::get('/movies/genre', [MovieController::class, 'genre']);
+Route::get('/movies/show/{title}', [MovieController::class, 'show']);
+
+Route::get('/movies/genre', [MovieController::class, 'showByGenre']);
