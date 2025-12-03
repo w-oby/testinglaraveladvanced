@@ -17,11 +17,12 @@ class PlanetController extends Controller
     }
 
     public function show(string $name): View
-{
+    {
 
-    $planet = DB::table('planets')->where('name', $name)->first();
+        $planet = DB::table('planets')->where('name', $name)->first();
 
-    return view('planets.show', ['planet' => $planet]);
-}
+        return view('planets.show', ['planet' => $planet]);
+
+    }
 
 }
