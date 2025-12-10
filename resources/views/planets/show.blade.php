@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <h1>{{ $planet->name }}</h1>
+    <h1>{{ $planet->name }} - {{ $planet->solarSystem->name }}</h1>
     <p>{{ $planet->description }}</p>
     <p>{{ $planet->size_in_km }} km</p>
 
