@@ -15,19 +15,13 @@
     <h1>List of planets</h1>
     <ul>
 
-        <!-- Original -->
-        <!-- @foreach ($planets as $planet)
+        @foreach ($planets as $planet)
             <li>
                 <a href="/planets/{{ $planet->name }}">
                     {{ $planet->name }}
                 </a>
             </li>
-        @endforeach -->
-
-        <!-- Lazy loading test -->
-        @foreach ($planets as $planet)
-        <h1>{{ $planet->name }} - {{ $planet->solarSystem->name }}</h1>
-        @endforeach
+        @endforeach 
         
     </ul>
 

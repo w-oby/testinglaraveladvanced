@@ -11,11 +11,7 @@ class PlanetController extends Controller
     public function index(): View
     {
 
-        // Eager loading
         $planets = Planet::with('solarSystem')->get();
-
-        // Lazy loading
-        // $planets = Planet::all();
 
         return view('planets.index', ['planets' => $planets]);
 
