@@ -12,10 +12,10 @@ class PlanetController extends Controller
     {
 
         // Eager loading
-        // $planets = Planet::with('solarSystem')->get();
+        $planets = Planet::with('solarSystem')->get();
 
         // Lazy loading
-        $planets = Planet::all();
+        // $planets = Planet::all();
 
         return view('planets.index', ['planets' => $planets]);
 
