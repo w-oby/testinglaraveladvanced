@@ -17,7 +17,8 @@
     <p>{{ $planet->size_in_km }} km</p>
 
     <br>
-    <a href="/planets">Back to the list</a>
+
+    <a href="{{ route('planets.index') }}">Back to the list</a>
     
 </body>
 </html>

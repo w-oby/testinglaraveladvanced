@@ -12,12 +12,16 @@
 </head>
 <body>
 
+    <nav>
+        <a href="{{ route('solarsystems.index') }}">See overview of solar systems</a>
+    </nav>
+
     <h1>List of planets</h1>
     <ul>
 
         @foreach ($planets as $planet)
             <li>
-                <a href="/planets/{{ $planet->name }}">
+                <a href="{{ route('planets.show', ['name' => $planet->name]) }}">
                     {{ $planet->name }}
                 </a>
             </li>
