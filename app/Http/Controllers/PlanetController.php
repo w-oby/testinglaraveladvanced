@@ -8,17 +8,24 @@ use Illuminate\View\View;
 class PlanetController extends Controller
 {
 
-    public function index(): View
-    {
+    // public function index(): View
+    // {
 
-        $planets = Planet::with('solarSystem')->get();
+    //     $planets = Planet::with('solarSystem')->get();
 
-        return view('planets.index', ['planets' => $planets]);
+    //     return view('planets.index', ['planets' => $planets]);
+
+    // }
+
+    public function index() {
+
+            $planets = Planet::all();
+
+            return view('planets.index', ['planets' => $planets]);
 
     }
 
-    public function show(string $name): View
-    {
+    public function show(string $name): View {
 
         $planet = Planet::with('solarSystem')->where('name', $name)->firstOrFail();
 
