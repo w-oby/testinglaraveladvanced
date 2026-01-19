@@ -18,7 +18,7 @@ class SolarSystemController extends Controller
 
     public function index(): View {
 
-        $solar_systems = SolarSystem::all();
+        $solar_systems = SolarSystem::withCount('planets')->get();
 
         return view('solar_systems.index', ['solar_systems' => $solar_systems]);
 

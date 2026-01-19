@@ -23,6 +23,10 @@
             <a href="{{ route('solarsystems.show', ['id' => $solar_system->id]) }}">
                 {{ $solar_system->name }}
             </a>
+
+            <!-- Amount of planets -->
+            <p>Amount of planets: {{ $solar_system->planets_count }}</p>
+
         </li>
         @endforeach
     </ul>
